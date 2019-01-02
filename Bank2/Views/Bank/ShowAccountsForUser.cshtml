@@ -1,0 +1,22 @@
+﻿@model  Bank2.ViewModels.ShowAccountsForUserViewModel
+
+@{
+    ViewBag.Title = "User accounts";
+}
+<h2>Här är dina konton @Model.Fornamn @Model.Efternamn</h2>
+
+
+<ul>
+    @foreach (var account in Model.Accounts)
+    {
+    <li>
+        
+        @Html.ActionLink(linkText: account.AccountNo, 
+       actionName: "ShowAccount", 
+       routeValues: new { accountNo = account.AccountNo })
+           - @account.Text
+    </li>
+    }
+</ul>
+
+

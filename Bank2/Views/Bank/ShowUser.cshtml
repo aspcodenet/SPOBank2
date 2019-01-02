@@ -1,0 +1,13 @@
+﻿@model  Bank2.ViewModels.ShowUserViewModel
+
+@{
+    ViewBag.Title = "User page";
+}
+<h2>Välkommen @Model.Fornamn @Model.Efternamn</h2>
+<h3>Du har @Model.AntalKonton konton med totalt @Model.TotalSumma kr</h3>
+
+
+Klicka här för att se @Html.ActionLink(linkText: "konton", 
+                     actionName: "ShowAccountsForUser",
+                    routeValues: new { id = Model.Id })
+
