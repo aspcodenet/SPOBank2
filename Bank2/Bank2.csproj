@@ -135,6 +135,7 @@
     <Compile Include="Models\DBContext.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\EditAccountViewModel.cs" />
     <Compile Include="ViewModels\ShowAccountsForUserViewModel.cs" />
     <Compile Include="ViewModels\ShowAccountViewModel.cs" />
     <Compile Include="ViewModels\ShowUserViewModel.cs" />
@@ -179,6 +180,9 @@
     <Content Include="Views\Bank\ShowUser.cshtml" />
     <Content Include="Views\Bank\ShowAccountsForUser.cshtml" />
     <Content Include="Views\Bank\ShowAccount.cshtml" />
+    <Content Include="Views\Bank\NewAccount.cshtml" />
+    <Content Include="Views\Bank\SaveNewAccount.cshtml" />
+    <Content Include="Views\Bank\EditUser.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

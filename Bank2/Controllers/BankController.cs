@@ -10,6 +10,54 @@ namespace Bank2.Controllers
 {
     public class BankController : Controller
     {
+        public ActionResult SaveAccount(EditAccountViewModel modified)
+        {
+            int id = modified.Id;
+            var dbContext = new DBContext();
+            var userModel = dbContext.GetUser(id);
+            userModel.BirthYear = modified.Birthyear;
+            userModel.FirstName = modified.Fornamn;
+            userModel.LastName = modified.Efternamn;
+            userModel.City = modified.City;
+
+            return View("NewAccount");
+        }
+        public ActionResult SaveNewAccount(EditAccountViewModel user)
+        {
+            if(user.Birthyear < 1900)
+            {
+                return View("NewAccount", user);
+            }
+
+            //Allt OK
+            var dbContext = new DBContext();
+            //spara!!
+
+            return View();
+        }
+
+        public ActionResult NewAccount()
+        {
+            var model = new EditAccountViewModel();
+            return View(model);
+        }
+
+        public ActionResult EditUser(int id)
+        {
+            var dbContext = new DBContext();
+            var user = dbContext.GetUser(id);
+            var model = new EditAccountViewModel
+            {
+                Birthyear = user.BirthYear,
+                City = user.City,
+                Efternamn = user.LastName,
+                Fornamn = user.FirstName,
+                Id = user.Id
+            };
+            return View(model);
+        }
+
+
         // GET: Bank
         public ActionResult Index()
         {

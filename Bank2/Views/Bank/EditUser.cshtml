@@ -1,0 +1,27 @@
+﻿@model Bank2.ViewModels.EditAccountViewModel
+@{
+    ViewBag.Title = "Edit user";
+}
+
+@using (Html.BeginForm("SaveAccount", "Bank", FormMethod.Post))
+{
+    @Html.HiddenFor(m => m.Id)
+
+    @Html.LabelFor(m => m.Fornamn)
+    @Html.TextBoxFor(m => m.Fornamn)
+
+    @Html.LabelFor(m => m.Efternamn)
+    @Html.TextBoxFor(m => m.Efternamn)
+
+    @Html.LabelFor(m => m.City)
+    @Html.TextBoxFor(m => m.City)
+
+    @Html.LabelFor(m => m.Birthyear)
+    @Html.TextBoxFor(m => m.Birthyear)
+
+    <input type="submit" value="Spara" />
+}
+
+
+
+

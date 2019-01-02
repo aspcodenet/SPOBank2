@@ -5,20 +5,34 @@
     ViewBag.Title = "Home Page";
 }
 
-<form action="/Home/Search" method="get">
-    <input type="text" name="q" />
-    <input type="submit" value="search" />
-</form>
+
+@using (Html.BeginForm("Search", "Home", FormMethod.Get))
+{
+
+     @Html.TextBoxFor(m=>m.q)
+    //@Html.TextBox("q")        
+}
+
 
 <ul>
     @foreach (var user in Model.Users)
     {
     <li>
         @Html.ActionLink(linkText: user.Name,
-               actionName: "ShowUser",
-               controllerName:"Bank",
-               routeValues: new { id = user.Id },
-               htmlAttributes:null)
+                 actionName: "ShowUser",
+                 controllerName: "Bank",
+                 routeValues: new { id = user.Id },
+                 htmlAttributes: null)
+
+        -
+
+        @Html.ActionLink(linkText: "Edit",
+                 actionName: "EditUser",
+                 controllerName: "Bank",
+                 routeValues: new { id = user.Id },
+                 htmlAttributes: null)
+
+
     </li>
-    }
+        }
 </ul>

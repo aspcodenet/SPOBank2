@@ -13,7 +13,7 @@ namespace Bank2.Controllers
         {
             var db = new DBContext();
             var model = new ViewModels.StartPageViewModel();
-
+            model.q = q;
             foreach (var user in db.GetAllUsers())
             {
                 if(user.FirstName.Contains(q))

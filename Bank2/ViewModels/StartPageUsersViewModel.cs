@@ -13,6 +13,7 @@ namespace Bank2.ViewModels
 
     public class StartPageViewModel
     {
+        public string q { get; set; }
         public StartPageViewModel()
         {
             Users = new List<StartPageUserViewModel>();
