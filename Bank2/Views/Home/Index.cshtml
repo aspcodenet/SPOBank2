@@ -5,7 +5,10 @@
     ViewBag.Title = "Home Page";
 }
 
-
+<form action="/Home/Search" method="get">
+    <input type="text" name="q" />
+    <input type="submit" value="search" />
+</form>
 
 <ul>
     @foreach (var user in Model.Users)
