@@ -13,11 +13,11 @@ namespace Bank2
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
-            routes.MapRoute(
-                name: "ShowAcocunt",
-                url: "Bank/ShowAccount/{accountNo}",
-                defaults: new { controller = "Bank", action = "ShowAccount", accountNo = UrlParameter.Optional }
-            );
+            //routes.MapRoute(
+            //    name: "ShowAcocunt",
+            //    url: "Bank/ShowAccount/{accountNo}",
+            //    defaults: new { controller = "Bank", action = "ShowAccount", accountNo = UrlParameter.Optional }
+            //);
 
             routes.MapRoute(
                 name: "Default",
